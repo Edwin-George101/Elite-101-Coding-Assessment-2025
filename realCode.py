@@ -9,26 +9,27 @@ restaurant_tables = [
     [6,   'x',    'o',    'o',    'o',    'x',    'o']
 ]
 
+#Hello Code2College! I used Visual Studio Code to run my code first then put that code into this assignment. GitHub was acting up and was glitching out, so I felt more comfortable there. If you guys would like my visual studio code or anything like that then let me know :). 
 
 def get_free_tables():
-    free_tables = set()  
-    header = restaurant_tables[0]  
+    free_tables = []  
+    top_row = restaurant_tables[0]  
 
     for row in restaurant_tables[1:]: 
-        for i in range(1, len(row)):  
-            if row[i] == 'o':  
-                free_tables.add(header[i])  
+        for x in range(1, len(row)):  
+            if row[x] == 'o':  
+                free_tables.append(top_row[x])  
 
     return list(free_tables)  
 
 
 print("Free tables:", get_free_tables())  
 
-#DOES NOT WORK
+#DOES NOT WORK BELOW but attempted a 
 
 def find_table_for_party(party_size, timeslot):
-    tables = restaurant_tables[0][1:]
-    availability = restaurant_tables[timeslot][1:]
+    tables = restaurant_tables[0][1:] #Looked this up and it goes through every column of the graph.
+    availability = restaurant_tables[timeslot][1:] #checks the timeslot in availability but not sure if this should work.
     
     for i in range(len(tables)):
         table_capacity = int(tables[i])
@@ -51,14 +52,16 @@ def find_combined_tables_for_party(party_size, timeslot):
     tables = restaurant_tables[0][1:]
     availability = restaurant_tables[timeslot][1:]
     
-    suitable_combinations = []
+    suitable_combos = []
     
     for i in range(len(tables) - 1):  # check pairs of adjacent tables
-        table_capacity_1 = int(tables[i])  # first table capacity
-        table_capacity_2 = int(tables[i+1])# Second table capacity
+        table_capacity_1 = int(tables[i])  # first table 
+        table_capacity_2 = int(tables[i+1])# second table that is right next to this table
         
-        # check if both tables are free
+        # checks if both tables are free
         if availability[i] == 'o' and availability[i+1] == 'o':
-            suitable_combinations.append
+            suitable_combos.append
     
-    return suitable_combinations if suitable_combinations else "No suitable combinations found."
+    return suitable_combos
+    
+    
