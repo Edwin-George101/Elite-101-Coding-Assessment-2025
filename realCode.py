@@ -9,6 +9,7 @@ restaurant_tables = [
     [6,   'x',    'o',    'o',    'o',    'x',    'o']
 ]
 
+#Sample data given ^^
 #Hello Code2College! I used Visual Studio Code to run my code first then put that code into this assignment. GitHub was acting up and was glitching out, so I felt more comfortable there. If you guys would like my visual studio code or anything like that then let me know :). 
 
 def get_free_tables():
@@ -47,15 +48,15 @@ def find_tables(party_size, timeslot):
     
     return suitable_tables
 
-#timeslot does not work with the adjacent tables
+#timeslot does not work with the adjacent tables.
 def find_combined_tables(party_size, timeslot):
-    tables = restaurant_tables[0][1:]
-    availability = restaurant_tables[timeslot][1:]
+    tables = restaurant_tables[0][1:] #Goes through every table in the column
+    availability = restaurant_tables[timeslot][1:] #The availability is in the timeslot
     
-    suitable_combos = [] #list for the suitable combos. This should be 
+    suitable_combos = [] #list for the suitable combos. This is the answer.
     
     for i in range(len(tables) - 1):  # check pairs of adjacent tables
-        table_capacity_1 = int(tables[i])  # first table 
+        table_capacity_1 = int(tables[i])  # first table is set
         table_capacity_2 = int(tables[i+1])# second table that is right next to this table
         
         # checks if both tables are free
