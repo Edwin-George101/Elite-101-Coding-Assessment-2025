@@ -57,8 +57,8 @@ def find_combined_tables_for_party(party_size, timeslot):
         table_capacity_1 = int(tables[i])  # first table capacity
         table_capacity_2 = int(tables[i+1])# Second table capacity
         
-        # check if both tables are free and can accommodate the party
-        if availability[i] == 'o' and availability[i+1] == 'o'
+        # check if both tables are free
+        if availability[i] == 'o' and availability[i+1] == 'o':
             suitable_combinations.append
     
     return suitable_combinations if suitable_combinations else "No suitable combinations found."
