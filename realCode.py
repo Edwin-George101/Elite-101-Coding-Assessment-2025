@@ -25,20 +25,20 @@ def get_free_tables():
 
 print("Free tables:", get_free_tables())  
 
-#DOES NOT WORK BELOW but attempted a 
+#DOES NOT WORK BELOW but attempted it.
 
 def find_table_for_party(party_size, timeslot):
     tables = restaurant_tables[0][1:] #Looked this up and it goes through every column of the graph.
     availability = restaurant_tables[timeslot][1:] #checks the timeslot in availability but not sure if this should work.
     
-    for i in range(len(tables)):
-        table_capacity = int(tables[i])
+    for i in range(len(tables)): #goes through the entire table list
+        table_capacity = int(tables[i]) #sets the capacity (to an integer) for the tables. 
         
     return "No table available"
 
 #tables are not suitable yet
-def find_tables_for_party(party_size, timeslot):
-    tables = restaurant_tables[0][1:]
+def find_tables(party_size, timeslot):
+    tables = restaurant_tables[0][1:] 
     availability = restaurant_tables[timeslot][1:]
     
     suitable_tables = []
@@ -48,11 +48,11 @@ def find_tables_for_party(party_size, timeslot):
     return suitable_tables
 
 #timeslot does not work with the adjacent tables
-def find_combined_tables_for_party(party_size, timeslot):
+def find_combined_tables(party_size, timeslot):
     tables = restaurant_tables[0][1:]
     availability = restaurant_tables[timeslot][1:]
     
-    suitable_combos = []
+    suitable_combos = [] #list for the suitable combos. This should be 
     
     for i in range(len(tables) - 1):  # check pairs of adjacent tables
         table_capacity_1 = int(tables[i])  # first table 
